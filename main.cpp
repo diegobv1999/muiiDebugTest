@@ -27,6 +27,7 @@ void calcularDatos(int16_t *datosV, int16_t *datosI, int longitud, estructuraMed
 int main()
 {
  
+ ////
     timer.reset();
     timer.start();
     resultado=calcularRMS(datos, longitudTrama);
