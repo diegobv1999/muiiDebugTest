@@ -56,14 +56,16 @@ int main()
 
  //Esta función calcula el valor RMS
 float calcularRMS(int16_t *datos, int longitud)
+
 {
     float rms=0;
-    float datoV;
+    //float datoV;
     for (int i=0;i<longitud;i++){
-        datoV=datos[i]/32768*3.3;
-        rms+=datoV*datoV;
+        //datoV=datos[i];
+        rms+=datos[i]*datos[i]; //datoV*datoV    pow(datoV,2);   
     }
-    rms=sqrt(rms/longitud);
+    rms=sqrt(rms/longitud)/32768.0*3.3;
+   // return sqrt(rms/longitud)/32768.0*3.3;
     return rms;
 }
  
